@@ -29,9 +29,9 @@ DW1000Class DW1000;
  * ######################################################################### */
 
 // pins
-unsigned int DW1000Class::_ss;
-unsigned int DW1000Class::_rst;
-unsigned int DW1000Class::_irq;
+int DW1000Class::_ss;
+int DW1000Class::_rst;
+int DW1000Class::_irq;
 // IRQ callbacks
 void (*DW1000Class::_handleSent)(void) = 0;
 void (*DW1000Class::_handleError)(void) = 0;

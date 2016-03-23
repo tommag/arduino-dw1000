@@ -613,9 +613,9 @@ public:
 
 private:
 	/* chip select, reset and interrupt pins. */
-	static unsigned int _ss;
-	static unsigned int _rst;
-	static unsigned int _irq;
+	static int _ss;
+	static int _rst;
+	static int _irq;
 
 	/* callbacks. */
 	static void (*_handleError)(void);
