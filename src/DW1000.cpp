@@ -94,8 +94,7 @@ void DW1000Class::select(int ss) {
 	delay(5);
 	// reset chip (either soft or hard)
 	if(_rst > 0) {
-		pinMode(_rst, OUTPUT);
-		digitalWrite(_rst, HIGH);
+		pinMode(_rst, INPUT);
 	}
 	reset();
 	// default network and node id
@@ -196,9 +195,10 @@ void DW1000Class::reset() {
 	if(_rst < 0) {
 		softReset();
 	} else {
+		pinMode(_rst, OUTPUT);
 		digitalWrite(_rst, LOW);
-		delay(10);
-		digitalWrite(_rst, HIGH);
+		delay(1);
+		pinMode(_rst, INPUT);
 		delay(10);
 		// force into idle mode (although it should be already after reset)
 		idle();
