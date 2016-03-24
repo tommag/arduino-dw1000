@@ -70,8 +70,8 @@ class DW1000RangingClass {
     
     
     //initialisation
-    static void initCommunication(unsigned int myRST=DEFAULT_RST_PIN, unsigned int mySS=DEFAULT_SPI_SS_PIN);
     static void configureNetwork(unsigned int deviceAddress, unsigned int networkId, const byte mode[]); 
+    static void initCommunication(unsigned int myRST=DEFAULT_RST_PIN, unsigned int mySS=DEFAULT_SPI_SS_PIN, unsigned int myINT = 0);
     static void generalStart();
     static void startAsAnchor(char address[], const byte mode[]);
     static void startAsTag(char address[], const byte mode[]);
